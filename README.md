@@ -1,6 +1,26 @@
-# Getting Started with Create React App
+# POKEMON APP
+A responsive web application allows logged-in users to pick their favorite pokemon and enter a battle with a random-generated pokemon.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## API
+Link: https://pokeapi.co/api/v2/ 
+
+## Database Schema
+![Model](Schema.jpg)
+
+## Technology Stack
+- HTML
+- CSS
+- JavaScript
+- Node.js
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Features
+- Sign up
+- Log in
+- Favorite
+- Random battle
+- Vote counts
+
 
 ## Available Scripts
 
