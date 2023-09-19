@@ -1,0 +1,20 @@
+.abilities {
+    width: 30%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.abilities .group {
+    background-color: rgb(223, 73, 73);   
+    color: white;
+    padding: 0.5rem;
+    font-size: 12;
+    border-radius: 8px;
+}
+
+.base-stat {
+    margin-top: 2rem;
+}
