@@ -11,8 +11,9 @@ Link: https://pokeapi.co/api/v2/
 - HTML
 - CSS
 - JavaScript
-- Node.js
-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Node.js (backend)
+- Express.js (backend)
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). (frontend)
 
 ## Features
 - Sign up
