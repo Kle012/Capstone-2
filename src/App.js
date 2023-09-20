@@ -14,7 +14,6 @@ export const STORED_TOKEN = 'secret-token';
 
 function App() {
   const [data, setData] = useState(false);
-  const [favoriteId, setFavoriteId] = useState(new Set([]));
   const [currUser, setCurrUser] = useState(null);
   const [token, setToken] = useLocalStorage(STORED_TOKEN);
 
@@ -27,7 +26,6 @@ function App() {
 
           let currUser = await PokemonApi.getCurrUser(username);
           setCurrUser(currUser);
-          setFavoriteId(new Set(currUser.favorites));
         }
         catch (e) {
           setCurrUser(null);
