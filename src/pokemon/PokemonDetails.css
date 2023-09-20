@@ -1,20 +1,27 @@
-.abilities {
-    width: 30%;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 1rem;
+.pokeDetail {
+    box-sizing: border-box;
+    border: 10px solid black;
+    padding: 40px;
+    text-align: center;
+    font-family: monospace;
+    background-color: rgba(232, 172, 243, 0.637);
 }
 
-.abilities .group {
-    background-color: rgb(223, 73, 73);   
-    color: white;
-    padding: 0.5rem;
-    font-size: 12;
-    border-radius: 8px;
+.linkBtn {
+    margin-top: 10px;
+    text-align: center;
 }
 
-.base-stat {
-    margin-top: 2rem;
+.pokeImg {
+    width: 80%;
+}
+
+h1, 
+h5 {
+    text-transform: capitalize;
+}
+
+.pokeInfo {
+    text-align: center;
+    margin-top: 10%;
 }

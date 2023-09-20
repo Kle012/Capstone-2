@@ -1,0 +1,18 @@
+.navLogo {
+    width: 30%;
+    height: 30%;
+}
+
+.navbar a {
+    color: black;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    color: blue;
+}
+
+.navbar a.active {
+    color: red
+}
