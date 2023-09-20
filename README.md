@@ -4,6 +4,9 @@ A responsive web application allows logged-in users to view details information 
 ## API
 Link: https://pokeapi.co/api/v2/ 
 
+## Backend
+This is the frontend for [PokemonAPI](https://github.com/Kle012/Capstone-2-Node-Express-Backend.git)
+
 ## Database Schema
 ![Model](Schema.jpg)
 
