@@ -1,5 +1,5 @@
 # POKEMON APP
-A responsive web application allows logged-in users to pick their favorite pokemon and enter a battle with a random-generated pokemon.
+A responsive web application allows logged-in users to view details information of all Pokemon in the database, enter random battles, and update their profile.
 
 ## API
 Link: https://pokeapi.co/api/v2/ 
@@ -18,9 +18,16 @@ Link: https://pokeapi.co/api/v2/
 ## Features
 - Sign up
 - Log in
-- Favorite
+- List of all Pokemon in the database
+- View details for each Pokemon
 - Random battle
-- Vote counts
+- Update profile
+
+## User flow
+- Sign up or log in
+- Redirect to homepage
+- Options in the navigation bar: pokedex (which show all Pokemon in the database with each one Pokemon is a link to a more detail page of said Pokemon), pokegame (enter random battles), profile (to update user's profile)
+- Log out
 
 
 ## Available Scripts
