@@ -1,6 +1,6 @@
 import React from "react";
-import PokeWithFav from "./PokeCardWithFav";
-import './PokemonCard.css';
+import PokeCardWithInfo from "./PokeCardWithInfo";
+
 
 /** Show info about a Pokemon on the list
  * 
@@ -14,17 +14,16 @@ const PokemonCard = ({ pokemon }) => {
 
     return (
         <div>
-            {
-                pokemon.map((item) => (
-                    <PokeWithFav
-                        key={item.id}
-                        id={item.id}
-                        image={item.sprites.front_default}
-                        name={item.name}
-                        type={item.types[0].type.name}
-                    />
-                ))
-            }
+                    {
+                        pokemon.map((item) => (
+                            <PokeCardWithInfo
+                                key={item.id}
+                                id={item.id}
+                                image={item.sprites.front_default}
+                                name={item.name}
+                            />
+                        ))
+                    }
         </div >
     )
 }

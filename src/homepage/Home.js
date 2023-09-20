@@ -1,6 +1,9 @@
 import React, { useContext } from "react";
 import UserContext from "../auth/UserContext";
 import { Link } from "react-router-dom";
+import logo from '../image/pokemon.png';
+import './Home.css';
+
 
 /** Homepage of site
  * 
@@ -18,21 +21,18 @@ const Home = () => {
     return (
         <div className="homepage">
             <div className="container text-center">
-                <h1 className="mb-4 font-weight-bold">Pokemon</h1>
-                <p className="lead">
-                    Let's Catch 'Em All!
-                </p>
+                <img src={logo} alt="homeLogo" className="logoImage"/>
                 {currUser
-                    ? <h2>
+                    ? <h2 className="text-monospace mt-5 welcomeText">
                         Welcome back, {currUser.firstName || currUser.username}!
                     </h2>
                     : (
                         <p>
-                            <Link className="btn btn-primary font-weight-bold mr-3" to='/login'>
-                                Log In
+                            <Link className="btn btn-warning text-monospace mr-3" to='/login'>
+                                LOG IN
                             </Link>
-                            <Link className="btn btn-primary font-weight-bold" to='/register'>
-                                Sign Up
+                            <Link className="btn btn-warning text-monospace" to='/register'>
+                                SIGN UP
                             </Link>
                         </p>
                     )

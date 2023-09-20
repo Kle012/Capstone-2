@@ -1,25 +1,22 @@
 import React from "react";
 
 const playerWin = () => {
-    return <p>First pokemon wins!</p>
+    return <h4>Left pokemon wins!</h4>
 }
 
 const computerWin = () => {
-    return <p>Second pokemon wins!</p>
+    return <h4>Right pokemon wins!</h4>
 }
 
 const Result = ({ firstTeam, secondTeam }) => {
 
     let exp1 = firstTeam.reduce((acc, pokemon) => acc + pokemon, 0);
-    console.log(exp1);
-
     let exp2 = secondTeam.reduce((acc, pokemon) => acc + pokemon, 0);
-    console.log(exp2);
 
     return (
-        <div>
-            <div>
-                {exp1 > exp2 ? playerWin() : exp1 < exp2 ? computerWin() : <p>Tie!</p>}
+        <div className="mt-4">
+            <div className="text-monospace text-center text-uppercase p-3 my-5 bg-danger text-white">
+                {exp1 > exp2 ? playerWin() : exp1 < exp2 ? computerWin() : <h4>TIE!</h4>}
             </div>
         </div>
     )

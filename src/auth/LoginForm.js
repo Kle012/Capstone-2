@@ -26,7 +26,7 @@ const LoginForm = ({ login }) => {
         e.preventDefault();
         let res = await login(formData);
         if (res.success) {
-            history.push('/pokemon');
+            history.push('/');
         } else {
             setFormErrors(res.errors);
         }
@@ -41,9 +41,9 @@ const LoginForm = ({ login }) => {
     }
 
     return (
-        <div className="LoginForm">
+        <div className="LoginForm text-monospace">
             <div className="container col-md-6 offset-md-3 col-lg-4 offset-lg-4">
-                <h3 className="mb-3">
+                <h3 className="mb-3" style={{ color: "black" }}>
                     Log In
                 </h3>
 
@@ -84,8 +84,8 @@ const LoginForm = ({ login }) => {
                                 : null
                             }
 
-                            <button className="btn btn-primary float-right">
-                                Log In
+                            <button className="btn btn-warning float-right">
+                                LOG IN
                             </button>
 
                         </form>

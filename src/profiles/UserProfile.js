@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import UserContext from "../auth/UserContext";
 import PokemonApi from "../api";
 import Alert from "../helpers/Alert";
+import './UserProfile.css';
+
 
 const ProfilePage = () => {
     const { currUser, setCurrUser } = useContext(UserContext);
@@ -58,8 +60,8 @@ const ProfilePage = () => {
 
     return (
         <div className="col-md-6 col-lg-4 offset-md-3 offset-lg-4">
-            <h3>Profile</h3>
-            <div className="card">
+            <div className="trainer-card">
+                <h3>Trainer Card</h3>
                 <div className="card-body">
                     <form>
                         <div className="form-group">
@@ -113,8 +115,8 @@ const ProfilePage = () => {
                             ? <Alert type="success" messages={['Updated successfully!']} />
                             : null}
 
-                        <button className="btn btn-primary btn-block mt-4" onClick={handleSubmit}>
-                            Updated!
+                        <button className="btn btn-warning btn-block mt-4" onClick={handleSubmit}>
+                            UPDATE!
                         </button>
                     </form>
                 </div>

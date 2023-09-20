@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import UserContext from "../auth/UserContext";
+import navLogo from '../image/poke-logo.png';
+import './Navigation.css';
 
 
 const Navigation = ({ logout }) => {
@@ -26,7 +28,7 @@ const Navigation = ({ logout }) => {
                 </li>
                 <li className="nav-item mr-4">
                     <Link className="nav-link" to='/' onClick={logout}>
-                        Log Out {currUser.first_name || currUser.username}
+                        Log Out, {currUser.first_name || currUser.username}
                     </Link>
                 </li>
             </ul>
@@ -53,7 +55,7 @@ const Navigation = ({ logout }) => {
     return (
         <nav className="Navigation navbar navbar-expand-md">
             <Link className="navbar-brand" to='/'>
-                Pokemon
+                <img src={navLogo} alt="navLogo" className="navLogo"/>
             </Link>
             {currUser ? loggedIn() : loggedOut()}
         </nav>

@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import PokemonApi from "../api";
 import PokemonCard from "./PokemonCard";
 import Loading from "../helpers/Loading";
-// import './Pokedex.css';
+import pokedex from '../image/pokedex.png';
+import './Pokedex.css';
 
 
 const Pokedex = () => {
@@ -26,20 +27,19 @@ const Pokedex = () => {
 
     useEffect(() => {
         pokeFun();
-    },[])
+    }, [])
 
     if (!pokeData) return <Loading />
 
     return (
-        <>
-            <div className="container">
-                <div className="row">
-                    <div className="col">
-                        <PokemonCard pokemon={pokeData} />
-                    </div>
-                </div>
+        <div className="container">
+            <div className="pokedexContainer">
+                <img src={pokedex} alt="pokedex" className="pokedexImg" />
             </div>
-        </>
+            <div className="pokedexContainer">
+                <PokemonCard pokemon={pokeData} />
+            </div>
+        </div>
     )
 
 }

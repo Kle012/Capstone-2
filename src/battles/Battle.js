@@ -4,6 +4,8 @@ import Card from "./Card";
 import Result from "./Result";
 import Loading from "../helpers/Loading";
 import { Link } from "react-router-dom";
+import pokegame from '../image/pokegame.png';
+import './Battle.css';
 
 
 const Battle = () => {
@@ -15,26 +17,28 @@ const Battle = () => {
 
     async function getTeamOne() {
         let first = await PokemonApi.getRandom();
+        let res = first.response;
         setFirstExp(state => {
-            state = [first.response.base_experience];
+            state = [res.base_experience];
             return state;
         });
 
         setTeamOne(teamOne => {
-            teamOne = [first.response];
+            teamOne = [res];
             return teamOne;
         });
     }
 
     async function getTeamTwo() {
         let second = await PokemonApi.getRandom();
+        let res = second.response;
         setSecondExp(state => {
-            state = [second.response.base_experience];
+            state = [res.base_experience];
             return state;
         });
-    
+
         setTeamTwo(teamTwo => {
-            teamTwo = [second.response];
+            teamTwo = [res];
             return teamTwo;
         });
     }
@@ -49,37 +53,50 @@ const Battle = () => {
     }
 
     if (!teamOne || !teamTwo) return <Loading />
+    console.log(teamOne);
 
     return (
-        <div>
-            <div>
-                {teamOne.map((member) => (
-                    <Card
-                        key={member.id}
-                        name={member.name}
-                        exp={member.base_experience ? member.base_experience : 0}
-                        image={member.sprites.front_default}
-                    />
-                ))
-                }
-            </div>
-            <div>
-                {teamTwo.map((member) => (
-                    <Card
-                        key={member.id}
-                        name={member.name}
-                        exp={member.base_experience ? member.base_experience : 0}
-                        image={member.sprites.front_default}
-                    />
-                ))
-                }
+        <div className="battleStyle">
+            <div className="container">
+                <img src={pokegame} alt="pokegame" className="pokegameIcon" />
+                <div className="row mx-md-n5">
+                    <div className="col px-md-5">
+                        <div className="p-3 border bg-light">
+                            {teamOne.map((member) => (
+                                <Card
+                                    key={member.id}
+                                    name={member.name}
+                                    exp={member.base_experience ? member.base_experience : 0}
+                                    image={member.sprites.front_default}
+                                />
+                            ))
+                            }
+                        </div>
+                    </div>
+                    <div className="col px-md-5">
+                        <div className="p-3 border bg-light">
+                            {teamTwo.map((member) => (
+                                <Card
+                                    key={member.id}
+                                    name={member.name}
+                                    exp={member.base_experience ? member.base_experience : 0}
+                                    image={member.sprites.front_default}
+                                />
+                            ))
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <Result firstTeam={firstExp} secondTeam={secondExp} />
             </div>
 
-            <Result firstTeam={firstExp} secondTeam={secondExp} />
-            
-            <button onClick={handleRefresh}>Again!</button>
-            
-            <Link to='/'><button>Home</button></Link>
+            <div className="buttonGroup">
+                <button onClick={handleRefresh} type="button" className="btn btn-dark againbtn">Again!</button>
+
+                <Link to='/pokemon'><button type="button" className="btn btn-dark">Pokedex</button></Link>
+            </div>
+
         </div>
     )
 }

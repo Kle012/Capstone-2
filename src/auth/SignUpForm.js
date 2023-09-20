@@ -27,7 +27,7 @@ const SignUpForm = ({ signup }) => {
         e.preventDefault();
         let res = await signup(formData);
         if (res.success) {
-            history.push('/pokemon');
+            history.push('/');
         } else {
             setFormErrors(res.errors);
         }
@@ -42,9 +42,9 @@ const SignUpForm = ({ signup }) => {
     }
 
     return (
-        <div className="SignupForm">
+        <div className="SignupForm text-monospace">
             <div className="container col-md-6 offset-md-3 col-lg-4 offset-lg-4">
-                <h3 className="mb-3">
+                <h3 className="mb-3" style={{ color: "black" }}>
                     Sign Up
                 </h3>
 
@@ -120,8 +120,8 @@ const SignUpForm = ({ signup }) => {
                                 : null
                             }
 
-                            <button type="submit" className="btn btn-primary float-right">
-                                Sign Up
+                            <button type="submit" className="btn btn-warning float-right">
+                                SIGN UP
                             </button>
 
                         </form>
