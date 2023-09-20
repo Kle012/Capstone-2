@@ -55,18 +55,6 @@ class PokemonApi {
         return res.user;
     }
 
-
-    /** Get favorites */
-    static async getFavorite(username) {
-        await this.request(`users/${username}/favorites`)
-    }
-
-    /** Save to favorite */
-
-    static async saveFavorite(username, id) {
-        await this.request(`users/${username}/favorites/${id}`, id, "post");
-    }
-
     /** Get details on a Pokemon by name */
 
     static async getOnePokemon(name) {

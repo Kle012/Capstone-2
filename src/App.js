@@ -68,23 +68,11 @@ function App() {
     }
   }
 
-  /** Check if pokemon has been favorited */
-  const inFavorite = (id) => {
-    return favoriteId.has(id);
-  }
-
-  /** Add to favorite */
-  const addToFav = (id) => {
-    if (inFavorite(id)) return;
-    PokemonApi.saveFavorite(currUser.username, id);
-    setFavoriteId(new Set([...favoriteId, id]));
-  }
-
   if (!data) return <Loading />;
 
   return (
     <BrowserRouter>
-      <UserContext.Provider value={{ currUser, setCurrUser, inFavorite, addToFav }}>
+      <UserContext.Provider value={{ currUser, setCurrUser }}>
         <div className='App'>
           <Navigation logout={logout} />
           <Routes login={login} signup={signup} />
